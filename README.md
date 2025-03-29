@@ -97,16 +97,12 @@ This project is a log aggregation system built with Apache Kafka and Java. It si
    Processed logs can be used for real-time monitoring, stored for historical analysis, or used to trigger alerts based on predefined rules.
 
 ### **Architecture Diagram**
-
-+----------------+       +-----------------+       +--------------------+
-| Log Generator 1|       |                 |       |                    |
-| (Kafka Producer)------>|   Kafka Cluster |<------| Log Aggregator     |
-+----------------+       | (Topics, Partitions,  | (Kafka Consumer)   |
-                         |  Replication)   |       |                    |
-+----------------+       |                 |       +--------------------+
-| Log Generator 2|       |                 |
-| (Kafka Producer)------>|                 |
-+----------------+       +-----------------+
+```mermaid
+graph LR
+  LG1["Log Generator 1 (Kafka Producer)"] --> KC["Kafka Cluster (Topics, Partitions, Replication)"]
+  LG2["Log Generator 2 (Kafka Producer)"] --> KC
+  KC --> LA["Log Aggregator (Kafka Consumer)"]
+```
 
 - **Key Architectural Considerations:**
   - **Scalability:**  
