@@ -23,52 +23,37 @@ This project is a log aggregation system built with Apache Kafka and Java. It si
 
 ---
 
-## 2. Timeline and Milestones
+## 2. Development Stage
 
-### **Day 1: Setup and Planning**
+### **Stage 1** (Completed)
 - **Setup Development Environment:**  
-  - Install and configure Apache Kafka locally.
   - Set up a Java project (using Maven or Gradle) with the necessary dependencies.
-  - Define project structure and commit an initial version to version control.
-- **Milestone:**  
-  Environment ready, basic project skeleton in place.
-
-### **Day 2: Implement Kafka Producers**
-- **Log Simulation:**  
-  - Create one or more Java-based Kafka producer applications that simulate log generation from different sources.
+- **Simple Log Simulation:**  
+  - Create one Java-based Kafka producer application that simulates log generation from different sources.
   - Define log formats and message schemas.
-- **Testing:**  
-  - Send sample logs to a designated Kafka topic.
-- **Milestone:**  
-  Working Kafka producers that simulate multiple log sources.
-
-### **Day 3: Implement Kafka Consumer (Log Aggregator)**
-- **Consumer Development:**  
   - Develop a Java-based Kafka consumer that subscribes to the log topic.
-  - Process incoming log messages (e.g., filtering, simple aggregation).
-- **Error Handling & Logging:**  
-  - Implement basic error handling and logging for the consumer application.
-- **Milestone:**  
-  Consumer processes and aggregates logs in real time.
-
-### **Day 4: Integration and Testing**
 - **Integration:**  
   - Connect producers and consumers to verify end-to-end data flow.
   - Ensure that the consumer correctly aggregates logs from multiple producers.
 - **Unit and Integration Tests:**  
   - Write tests for critical components to validate functionality.
-- **Milestone:**  
-  The System is integrated with smooth data flow and basic tests in place.
 
-### **Day 5: Enhancements and Finalization**
-- **Optional Enhancements:**  
-  - Implement additional features such as real-time dashboards or enhanced log filtering.
-  - Optimize configurations for performance and reliability.
-- **Documentation:**  
-  - Finalize documentation and update the design doc with any changes.
-- **Milestone:**  
-  Project complete with enhancements and documentation finalized.
+### **Stage 2** (Current)
+- **Enhance Log Simulation:**  
+  - Modify your producer to simulate logs from multiple sources or services.
+  - Introduce different log levels (INFO, WARN, ERROR) or formats (e.g., JSON) to make the data more realistic.
+- **Improve the Consumer:**  
+  - Implement logic to aggregate or filter logs based on criteria such as log level, service name, or timestamp.
+  - Consider writing the aggregated output to a file or even a database for persistence and further analysis.
+- **Add Robust Logging and Error Handling:**
+  - Integrate a proper logging framework (e.g., slf4j with Logback) to capture runtime details and errors.
+  - Enhance error handling in both the producer and consumer to manage connection issues or message parsing failures.
+- **Create tests for your producer and consumer logic:**
+  - Use testing frameworks like JUnit to ensure your message processing behaves as expected.
 
+### **Stage 3**
+- **Explore Kafka Streams**
+- **Build a Simple Dashboard**
 ---
 
 ## 3. System Architecture
