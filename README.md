@@ -1,17 +1,17 @@
 # Log Aggregation System
 
-This project is a log aggregation system built with Apache Kafka and Java. It simulates multiple applications generating logs, aggregates them in real time, and processes these logs for monitoring and analysis.
+This project is a log aggregation system built with Apache Kafka and Java, and it runs with Docker. It simulates multiple applications generating logs, aggregates them in real time, and processes them for monitoring and analysis.
 
 ---
 
 ## 1. Goals and Objectives
 
 - **Primary Goal:**  
-  Build a log aggregation system using Apache Kafka and Java that simulates multiple applications generating logs, aggregates them in real time, and processes the logs for monitoring and analysis.
+  Using Apache Kafka and Java to build a system that simulates multiple applications generating logs, aggregates them in real time, and processes the logs for monitoring and analysis.
 
 - **Objectives:**
-  - **Understand Kafka Fundamentals:**  
-    Gain hands-on experience with Kafka's producers, consumers, and topic partitioning.
+  - **Practice Kafka & Docker Fundamentals:**  
+    Gain hands-on experience with Kafka's producers, consumers, and Docker.
   - **Real-Time Data Processing:**  
     Process logs as they are produced, demonstrating real-time ingestion and processing.
   - **Scalability and Fault Tolerance:**  
@@ -44,7 +44,7 @@ This project is a log aggregation system built with Apache Kafka and Java. It si
   - Introduce different log levels (INFO, WARN, ERROR) or formats (e.g., JSON) to make the data more realistic.
 - **Improve the Consumer:**  
   - Implement logic to aggregate or filter logs based on criteria such as log level, service name, or timestamp.
-  - Consider writing the aggregated output to a file or even a database for persistence and further analysis.
+  - Consider writing the aggregated output to a file or a database for persistence and further analysis.
 - **Add Robust Logging and Error Handling:**
   - Integrate a proper logging framework (e.g., slf4j with Logback) to capture runtime details and errors.
   - Enhance error handling in both the producer and consumer to manage connection issues or message parsing failures.
