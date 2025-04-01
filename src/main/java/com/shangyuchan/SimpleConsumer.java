@@ -12,7 +12,9 @@ public class SimpleConsumer {
         // Configure the Consumer
         Properties props = new Properties();
         props.put("bootstrap.servers", "localhost:9092");
+        // group id let kafka knows which consumers to share the same load balancer
         props.put("group.id", "test-group");
+        // let kafka to automatically save the consumed offset
         props.put("enable.auto.commit", "true");
         props.put("auto.commit.interval.ms", "1000");
         props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");

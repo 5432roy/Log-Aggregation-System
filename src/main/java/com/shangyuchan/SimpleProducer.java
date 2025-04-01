@@ -10,6 +10,7 @@ public class SimpleProducer {
         // Configure the Producer
         Properties props = new Properties();
         props.put("bootstrap.servers", "localhost:9092");
+        // Successfully send to message when a replicas sync from the leader
         props.put("acks", "all");
         props.put("retries", 0);
         props.put("batch.size", 16384);
