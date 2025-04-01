@@ -15,6 +15,18 @@ public class LogEntry {
         this.level = level;
         this.message = message;
     }
+    
+    public String getService() {
+        return this.service;
+    }
+
+    public String getLevel() {
+        return this.level;
+    }
+
+    public String getMessage() {
+        return this.message;
+    }
 
     @Override
     public String toString() {
