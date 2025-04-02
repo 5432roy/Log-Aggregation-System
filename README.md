@@ -4,12 +4,7 @@ This project is a log aggregation system built with Apache Kafka and Java, and i
 
 ---
 
-## 1. Goals and Objectives
-
-- **Primary Goal:**  
-  Using Apache Kafka and Java to build a system that simulates multiple applications generating logs, aggregates them in real time, and processes the logs for monitoring and analysis.
-
-- **Objectives:**
+## 1. Objectives
   - **Practice Kafka & Docker Fundamentals:**  
     Gain hands-on experience with Kafka's producers, consumers, and Docker.
   - **Real-Time Data Processing:**  
@@ -18,8 +13,6 @@ This project is a log aggregation system built with Apache Kafka and Java, and i
     Leverage Kafka’s ability to handle high-throughput data and ensure the system is resilient.
   - **Extensible Architecture:**  
     Lay a foundation that can be extended later for features like filtering, alerting, or integration with dashboards.
-  - **Solidify Java Integration:**  
-    Utilize existing Java skills to develop both the producer (simulating log generation) and the consumer (log aggregator).
 
 ---
 
@@ -35,20 +28,18 @@ This project is a log aggregation system built with Apache Kafka and Java, and i
 - **Integration:**  
   - Connect producers and consumers to verify end-to-end data flow.
   - Ensure that the consumer correctly aggregates logs from multiple producers.
-- **Unit and Integration Tests:**  
-  - Write tests for critical components to validate functionality.
 
 ### **Stage 2** (Current)
 - **Enhance Log Simulation:**  
-  - Modify your producer to simulate logs from multiple sources or services.
+  - Modify the producer to simulate logs from multiple sources or services.
   - Introduce different log levels (INFO, WARN, ERROR) or formats (e.g., JSON) to make the data more realistic.
 - **Improve the Consumer:**  
   - Implement logic to aggregate or filter logs based on criteria such as log level, service name, or timestamp.
   - Consider writing the aggregated output to a file or a database for persistence and further analysis.
 - **Add Robust Logging and Error Handling:**
-  - Integrate a proper logging framework (e.g., slf4j with Logback) to capture runtime details and errors.
+  - Integrate a proper logging framework (e.g., slf4j with Logback).
   - Enhance error handling in both the producer and consumer to manage connection issues or message parsing failures.
-- **Create tests for your producer and consumer logic:**
+- **Create tests for the producer and consumer logic:**
   - Use testing frameworks like JUnit to ensure your message processing behaves as expected.
 
 ### **Stage 3**
