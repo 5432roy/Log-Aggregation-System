@@ -14,7 +14,7 @@ public class Slf4jProducer {
     private static final Logger logger = LoggerFactory.getLogger(Slf4jProducer.class);
     private static final String TOPIC = "test-topic";
     private static final String[] SERVICES = {"AuthService", "PaymentService", "OrderService", "NotificationService"};
-    private static final String[] LEVELS = {"INFO", "WARN", "ERROR"};
+    private static final String[] LEVELS = {"TRACE", "DEBUG" ,"INFO", "WARN"};
     private static final Random random = new Random();
 
     public static void main(String[] args) {
@@ -31,7 +31,7 @@ public class Slf4jProducer {
         Producer<String, String> producer = new KafkaProducer<>(props);
 
         try {
-            System.out.printf("Start sending messages%n");
+            logger.info("slf4j consumer: Start sending messages");
             for(int i = 0; i < 10; i++) {
                 String service = SERVICES[random.nextInt(SERVICES.length)];
                 String level = LEVELS[random.nextInt(LEVELS.length)];
@@ -52,10 +52,10 @@ public class Slf4jProducer {
                 Thread.sleep(500);
             }
         } catch(Exception e) {
-            logger.error("Unexpected error in slf4j procuder", e);
+            logger.error("slf4j procuder: Unexpected error", e);
         } finally {
             producer.close();
-            logger.info("slf4j producer closed");
+            logger.info("slf4j producer: closed");
         }
     }
 }

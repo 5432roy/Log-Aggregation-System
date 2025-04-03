@@ -40,14 +40,30 @@ public class Slf4jConsumer {
         Map<String, Integer> logCounts = new HashMap<>();
 
         try {
-            System.out.println("Slf4j consumer starts listening to: " + topic);
+            logger.info("slf4j consumer: starts listening to: {}", topic);
             while (true) {
                 ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
                 for (ConsumerRecord<String, String> record : records) {
                     try {
                         LogEntry logEntry = gson.fromJson(record.value(), LogEntry.class);
                         logCounts.put(logEntry.getLevel(), logCounts.getOrDefault(logEntry.getLevel(), 0) + 1);
-                        logger.info("Received Log {}", logEntry);
+                        switch (logEntry.getLevel()) {
+                            case "TRACE":
+                                logger.trace("{}", logEntry);
+                                break;
+                            case "DEBUG":
+                                logger.debug("{}", logEntry);
+                                break;
+                            case "INFO":
+                                logger.info("{}", logEntry);
+                                break;
+                            case "WARN":
+                                logger.warn("{}", logEntry);
+                                break;
+                            default:
+                                logger.error("Received Log with no LEVEL {}", logEntry);
+                                break;
+                        }
                     } catch (JsonSyntaxException e) {
                         logger.error("slf4j consumer: Failed to parse log message: {}", record.value() ,e);
                     }
@@ -60,7 +76,7 @@ public class Slf4jConsumer {
         } catch (Exception e) {
         } finally {
             consumer.close();
-            logger.info("slf4j consumer closed");
+            logger.info("slf4j consumer: closed");
         }
     }
 }
